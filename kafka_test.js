@@ -42,7 +42,8 @@ class KafkaConsumer extends KafkaClient {
 
     consume (topic, offset, limit) {
         // this.consumer = new Consumer(this.client, [{topic, offset}], {groupId: 'kafka-node-group-mine', autoCommit: false, fromOffset: false})
-        this.consumer = new Consumer(this.client, [{topic}], {groupId: 'kafka-node-group', autoCommit: false, fromOffset: true})
+        this.consumer = new Consumer(this.client, [{topic: topic, offset: offset}], {groupId: 'kafka-node-group', autoCommit: false, fromOffset: true})
+
         var consumed = 0
         this.consumer.on('message', function (message) {
             console.log(`${topic}[${message.offset}(${message.partition})]: ${message.value}`)
@@ -50,6 +51,9 @@ class KafkaConsumer extends KafkaClient {
             if (limit && consumed === limit) process.exit()
         }).on('error', function (err) {
             console.log('ERROR: ', err)
+        }).on('offsetOutOfRange', function (err) {
+            this.setOffset(topic, 0, ++offset)
+            console.log(err)
         })
     }
 }
