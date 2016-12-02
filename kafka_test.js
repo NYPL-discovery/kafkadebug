@@ -42,7 +42,7 @@ class KafkaConsumer extends KafkaClient {
 
     consume (topic, offset, limit) {
         // this.consumer = new Consumer(this.client, [{topic, offset}], {groupId: 'kafka-node-group-mine', autoCommit: false, fromOffset: false})
-        this.consumer = new Consumer(this.client, [{topic}], {groupId: 'kafka-node-group', autoCommit: false, fromOffset: false})
+        this.consumer = new Consumer(this.client, [{topic}], {groupId: 'kafka-node-group', autoCommit: false, fromOffset: true})
         var consumed = 0
         this.consumer.on('message', function (message) {
             console.log(`${topic}[${message.offset}(${message.partition})]: ${message.value}`)
