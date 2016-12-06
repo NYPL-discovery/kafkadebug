@@ -53,7 +53,7 @@ class KafkaConsumer extends KafkaClient {
             console.log('ERROR: ', err)
         }).on('offsetOutOfRange', function (err) {
             this.setOffset(topic, 0, ++offset)
-            console.log(err)
+            console.log('offset out of range: ' + offset, err)
         })
     }
 }

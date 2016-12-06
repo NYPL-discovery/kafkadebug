@@ -1,0 +1,5 @@
+{
+  "endpoint": "kafka.nypltech.org:2181/",
+  "client_id": "totally-kool-kafka-client",
+  "group_id": "totally-kool-kafka-group"
+}
