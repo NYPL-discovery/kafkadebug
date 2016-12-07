@@ -50,13 +50,13 @@ Hmm.. Also started at 1639354 and ran to final offset..
 
 ```
 gem install whirly
-ruby ruby-kafka-v1.rb
+ruby ruby-kafka-v1.rb Bib
 ```
 
 Result:
 
 ```
-🙁  consumed: 202079     min: 1639354    max: 1841432
+😮  consumed: 202079     min: 1639354    max: 1841432
 ```
 
-Same...
+Same... This specifies `start_from_beginning: true`, so should seek out the lowest offset, yet it's starting from 1639354 like the node versions... 
