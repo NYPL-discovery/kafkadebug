@@ -45,3 +45,18 @@ consumed: 404150	min: 1639354	max: 1841430
 ```
 
 Hmm.. Also started at 1639354 and ran to final offset..
+
+## ruby-kafka
+
+```
+gem install whirly
+ruby ruby-kafka-v1.rb
+```
+
+Result:
+
+```
+🙁  consumed: 202079     min: 1639354    max: 1841432
+```
+
+Same...
