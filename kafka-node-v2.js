@@ -29,7 +29,6 @@ class KafkaConsumer extends KafkaClient {
     this.consumer = new Consumer(this.client, [payload], {groupId: conf.group_id, autoCommit: false, fromOffset: true})
     var consumed = 0
     this.consumer.on('message', function (m) {
-      consumed += 1
       if (limit && consumed === limit) process.exit()
 
       if (vals.min == null) vals.min = m.offset
