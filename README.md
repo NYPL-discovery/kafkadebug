@@ -43,7 +43,7 @@ node kafka-node-v1.js Bib
 Result:
 
 ```
-consumed: 404150	min: 1639354	max: 1841430
+consumed: 202079	min: 1639354	max: 1841432
 ```
 
 Hmm.. Also started at 1639354 and ran to final offset..
