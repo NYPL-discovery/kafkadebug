@@ -9,9 +9,6 @@ var Kafka = require('no-kafka')
 var common = require('./common')
 var conf = require('./conf.json')
 
-// no-kafka doesn't support zk?
-conf.endpoint = conf.endpoint.replace(/2181/, '9092')
-
 var consumer = new Kafka.SimpleConsumer({
   connectionString: conf.endpoint,
   recoveryOffset: Kafka.LATEST_OFFSET,

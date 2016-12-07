@@ -14,7 +14,7 @@ var Consumer = kafka.HighLevelConsumer
 class KafkaClient {
   constructor (options) {
     options = options || {}
-    options = Object.assign({ endpoint: conf.endpoint, client_id: conf.client_id }, options)
+    options = Object.assign({ endpoint: conf.zk_endpoint, client_id: conf.client_id }, options)
     this.client = new kafka.Client(options.endpoint, options.client_id)
   }
 }
@@ -25,6 +25,7 @@ class KafkaConsumer extends KafkaClient {
 
   consume (topic, offset, limit) {
     var payload = { topic, partition: 0, offset }
+    console.log({payload})
     this.consumer = new Consumer(this.client, [payload], {groupId: conf.group_id, autoCommit: false, fromOffset: true})
     var consumed = 0
     this.consumer.on('message', function (m) {
