@@ -14,7 +14,7 @@ var Consumer = kafka.Consumer
 class KafkaClient {
   constructor (options) {
     options = options || {}
-    options = Object.assign({ endpoint: conf.endpoint, client_id: conf.client_id }, options)
+    options = Object.assign({ endpoint: conf.zk_endpoint, client_id: conf.client_id }, options)
     this.client = new kafka.Client(options.endpoint, options.client_id)
   }
 }

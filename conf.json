@@ -1,5 +1,6 @@
 {
-  "endpoint": "kafka.nypltech.org:2181/",
-  "client_id": "totally-kool-kafka-client",
+  "zk_endpoint": "kafka.nypltech.org:2181",
+  "endpoint": "kafka.nypltech.org:9092",
+  "client_id": "totally-kool-kafka-client2",
   "group_id": "totally-kool-kafka-group"
 }
