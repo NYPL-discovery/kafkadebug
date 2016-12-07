@@ -1,5 +1,7 @@
 # kafkadebug
 
+tldr: Using two different node clients and a ruby client, it's looking like the lowest offset in Bib is 1639354 and there are only about 202059 entries in that topic currently. Is that the case?
+
 ## no-kafka
 
 ```
