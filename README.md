@@ -1,5 +1,7 @@
 # kafkadebug
 
+tldr: Using two different node clients and a ruby client, it's looking like the lowest offset in Bib is 1639354 and there are only about 202059 entries in that topic currently. Is that the case?
+
 ## no-kafka
 
 ```
@@ -41,7 +43,7 @@ node kafka-node-v1.js Bib
 Result:
 
 ```
-consumed: 404150	min: 1639354	max: 1841430
+consumed: 202079	min: 1639354	max: 1841432
 ```
 
 Hmm.. Also started at 1639354 and ran to final offset..
